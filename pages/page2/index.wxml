@@ -1,0 +1,4 @@
+<view>这是页面2的东西new</view>
+<button bindtap='btnClick'>点击上传二维码</button>
+<view >{{dataUrl}}</view> 
+<time class="time" startTime="10" callback="{{timerCallback}}"></time>

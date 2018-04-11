@@ -1,0 +1,5 @@
+<!--component/time/time.wxml-->
+<text>倒计时组件</text>
+<text>{{nowTime}}</text>
+<button bindtap='_reset'>重置</button>
+<!-- <text>{{startTime}}</text> -->

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "father": "../../component/father/father",
+    "child": "../../component/child/child",
+    "time": "../../component/time/time"
+  }
+}

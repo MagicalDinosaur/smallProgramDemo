@@ -1,0 +1,2 @@
+<!--component/child/child.wxml-->
+<text>这是子组件的信息内容</text>

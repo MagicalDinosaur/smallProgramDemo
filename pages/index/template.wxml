@@ -1,0 +1,5 @@
+<!--模版  -->
+<template name='name'>
+  <view>这是一个模版：</view>
+  <view>{{name}}</view>
+</template>

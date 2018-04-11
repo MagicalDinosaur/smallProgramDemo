@@ -1,0 +1,44 @@
+<!--index.wxml-->
+
+<!--引入 wxs文件-->
+<wxs src="index.wxs" module="tools" />
+<scroll-view scroll-into-view="child">
+  <view class="container">
+    <view class="userinfo">
+      <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <block wx:else>
+        <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+        <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      </block>
+    </view>
+    <view class="usermotto">
+      <text class="user-motto">{{motto}}</text>
+    </view>
+
+    <!-- <view wx:for="{{array}}">array {{item}}</view>  -->
+
+    <!--引入模版  -->
+    <import src="template.wxml" />
+    <template is="name" data="{{name:666}}"></template>
+
+    <!--bindtap事件  -->
+    <button bindtap='btnClick' warnSize='true'>
+      点击跳转页面
+    </button>
+
+    <!-- 引入的wxs变量  -->
+    <view>{{tools.foo}}</view>
+
+    <!-- 自定义组件  -->
+    <view>
+      <father text="Some text" bindmyevent="myeventTap">
+        <child></child>
+        <!-- 这是对应slot的位置  -->
+        <view slot="second">{{test2}}</view>
+        <view slot="first">您点击了{{i}}次自定义组件的按钮</view>
+
+      </father>
+      <child id="child"></child>
+    </view>
+  </view>
+</scroll-view>

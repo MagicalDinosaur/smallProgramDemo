@@ -1,0 +1,6 @@
+<view class='inner'>
+  <view >这是组件内的元素{{text}}</view>
+  <slot name="first"></slot>
+  <slot name="second"></slot>
+   <button bindtap='onTap'>自定义组件内的按钮</button> 
+</view>

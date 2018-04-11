@@ -1,0 +1,8 @@
+Page {
+  text-align: center;
+}
+
+.time {
+  display: block;
+  /* margin: 20rpx; */
+}

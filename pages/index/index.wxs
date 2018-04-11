@@ -1,0 +1,4 @@
+var foo="hello 这是从 wxs 文件来的信息!";
+module.exports={
+  foo:foo
+}
