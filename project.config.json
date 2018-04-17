@@ -10,7 +10,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "1.9.91",
 	"appid": "wxee9782be6f472d16",
-	"projectname": "demo1",
+	"projectname": "smallProgramDemo",
 	"isGameTourist": false,
 	"condition": {
 		"search": {
@@ -30,13 +30,24 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "page2",
 					"pathName": "pages/page2/index",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "引入echarts",
+					"pathName": "pages/echarts/echarts",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "公共样式",
+					"pathName": "pages/publicwxss/public"
 				}
 			]
 		}

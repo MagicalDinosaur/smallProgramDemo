@@ -1,15 +1,18 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/page2/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/echarts/echarts",
+    "pages/publicwxss/public"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#000",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"white"
+    "navigationBarTextStyle": "white"
   },
-  "usingComponents":{
+  "usingComponents": {
+    "ec-canvas": "libs/ec-canvas/ec-canvas"
   }
 }

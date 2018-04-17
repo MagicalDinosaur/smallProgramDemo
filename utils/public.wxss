@@ -1,0 +1,252 @@
+/* UI公共CSS */
+
+/* 颜色  */
+
+.blue1 {
+  color: rgba(229, 248, 255, 1);
+}
+
+.blue2 {
+  color: rgba(187, 231, 246, 1);
+}
+
+.blue3 {
+  color: rgba(96, 189, 241, 1);
+}
+
+.blue4 {
+  color: rgba(45, 169, 238, 1);
+}
+
+.blue5 {
+  color: rgba(22, 150, 234, 1);
+}
+
+.blue6 {
+  color: rgba(17, 126, 209, 1);
+}
+
+.grey1 {
+  color: rgba(243, 243, 243, 1);
+}
+
+.grey2 {
+  color: rgba(218, 218, 218, 1);
+}
+
+.grey3 {
+  color: rgba(190, 190, 190, 1);
+}
+
+.grey4 {
+  color: rgba(162, 162, 162, 1);
+}
+
+.grey5 {
+  color: rgba(136, 136, 136, 1);
+}
+
+.grey6 {
+  color: rgba(106, 106, 106, 1);
+}
+
+.grey7 {
+  color: rgba(59, 59, 59, 1);
+}
+
+.green1 {
+  color: rgba(243, 255, 219, 1);
+}
+
+.green2 {
+  color: rgba(217, 241, 166, 1);
+}
+
+.green3 {
+  color: rgba(182, 223, 118, 1);
+}
+
+.green4 {
+  color: rgba(143, 203, 49, 1);
+}
+
+.green5 {
+  color: rgba(110, 184, 5, 1);
+}
+
+.green6 {
+  color: rgba(84, 154, 64, 1);
+}
+
+.red1 {
+  color: rgba(255, 241, 239, 1);
+}
+
+.red2 {
+  color: rgba(255, 209, 203, 1);
+}
+
+.red3 {
+  color: rgba(255, 149, 118, 1);
+}
+
+.red4 {
+  color: rgba(241, 87, 46, 1);
+}
+
+.red5 {
+  color: rgba(225, 65, 22, 1);
+}
+
+.red6 {
+  color: rgba(200, 42, 0, 1);
+}
+
+.yellow1 {
+  color: rgba(255, 248, 206, 1);
+}
+
+.yellow2 {
+  color: rgba(255, 236, 147, 1);
+}
+
+.yellow3 {
+  color: rgba(255, 222, 89, 1);
+}
+
+.yellow4 {
+  color: rgba(251, 207, 0, 1);
+}
+
+.yellow5 {
+  color: rgba(246, 193, 21, 1);
+}
+
+.yellow6 {
+  color: rgba(238, 175, 0, 1);
+}
+
+.purple1 {
+  color: rgba(250, 242, 252, 1);
+}
+
+.purple2 {
+  color: rgba(238, 203, 247, 1);
+}
+
+.purple3 {
+  color: rgba(215, 154, 226, 1);
+}
+
+.purple4 {
+  color: rgba(189, 114, 204, 1);
+}
+
+.purple5 {
+  color: rgba(175, 88, 193, 1);
+}
+
+.purple6 {
+  color: rgba(153, 68, 170, 1);
+}
+
+.brown1 {
+  color: rgba(249, 240, 232, 1);
+}
+
+.brown2 {
+  color: rgba(242, 216, 199, 1);
+}
+
+.brown3 {
+  color: rgba(224, 164, 124, 1);
+}
+
+.brown4 {
+  color: rgba(209, 126, 70, 1);
+}
+
+.brown5 {
+  color: rgba(201, 100, 9, 1);
+}
+
+.brown6 {
+  color: rgba(191, 85, 6, 1);
+}
+
+.gold {
+  color: rgba(255, 200, 0, 1);
+}
+
+.border-color {
+  color: rgba(232, 232, 232, 1);
+}
+
+/* 主页卡片  */
+
+.card {
+  margin: 25rpx;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8rpx;
+}
+
+.card_title {
+  width: 100%;
+  margin: 40rpx 0 16rpx 40rpx;
+  font-size: 32rpx;
+  font-weight: 500;
+  color: #3b3b3b;
+}
+
+.card_btnClick_more {
+  /* width: 100%; */
+  margin: 0 40rpx;
+  height: 80rpx;
+  line-height: 82rpx;
+  font-size: 26rpx;
+  font-weight: 500;
+  color: #a2a2a2;
+  text-align: center;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1rpx solid #f3f3f3;
+  box-sizing: border-box;
+  border-radius: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.card_btnClick_more_icon {
+  width: 15rpx;
+  height: 26.5rpx;
+}
+
+/* 字体大小  */
+
+.fs22 {
+  font-size: 22rpx;
+}
+
+.fs24 {
+  font-size: 24rpx;
+}
+
+.fs26 {
+  font-size: 26rpx;
+}
+
+.fs28 {
+  font-size: 28rpx;
+}
+
+.fs30 {
+  font-size: 30rpx;
+}
+
+.fs32 {
+  font-size: 32rpx;
+}

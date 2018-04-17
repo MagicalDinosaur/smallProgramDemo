@@ -13,7 +13,7 @@ Page({
     i: 0,
     timerCallback: function () {
       console.log('计时器变化一次');
-    }
+    },
   },
   //事件处理函数
   bindViewTap: function () {
@@ -66,6 +66,19 @@ Page({
     }
 
   },
+  onReady: function () {
+    setTimeout(() => {
+      console.log(echarts)
+    }, 2000)
+  },
+  onShareAppMessage: function (res) {
+    return {
+      title: 'ECharts 可以在微信小程序中使用啦！',
+      path: '/pages/index/index',
+      success: function () { },
+      fail: function () { }
+    }
+  },
   getUserInfo: function (e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo
@@ -86,5 +99,5 @@ Page({
       i: this.data.i
     })
   },
-
 })
+

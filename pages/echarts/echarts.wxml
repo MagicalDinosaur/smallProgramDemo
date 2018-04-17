@@ -1,0 +1,6 @@
+<!--pages/echarts/echarts.wxml-->
+<view class="container">
+  <text>echarts 图表</text>
+  <ec-canvas id="mychart-dom-multi-bar" canvas-id="mychart-multi-bar" ec="{{ ecBar }}"></ec-canvas>
+  <ec-canvas id="mychart-dom-multi-scatter" canvas-id="mychart-multi-scatter" ec="{{ ecScatter }}"></ec-canvas>
+</view>

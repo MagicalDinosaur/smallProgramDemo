@@ -40,5 +40,7 @@
       </father>
       <child id="child"></child>
     </view>
+
   </view>
+
 </scroll-view>

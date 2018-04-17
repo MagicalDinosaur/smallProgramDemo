@@ -1,0 +1,5 @@
+<!--pages/publicwxss/public.wxml-->
+<view class='container'>
+  <text class='blue5 fs26'>这是字号26rpx颜色blue5的样式</text>
+  <text class='red2 fs32'>这是字号32rpx颜色red5的样式</text>
+</view>
