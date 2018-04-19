@@ -2,4 +2,5 @@
 <view class='container'>
   <text class='blue5 fs26'>这是字号26rpx颜色blue5的样式</text>
   <text class='red2 fs32'>这是字号32rpx颜色red5的样式</text>
+  <text class='green4 fs22'>这是字号222rpx颜色green4的样式</text>
 </view>

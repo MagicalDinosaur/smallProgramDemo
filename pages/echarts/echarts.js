@@ -201,7 +201,7 @@ Page({
     // 获取组件
     this.ecComponent = this.selectComponent('#mychart-dom-multi-scatter');
     let that = this;
-    setTimeout(() => {
+    // setTimeout(() => {
       that.ecComponent.init((canvas, width, height) => {
         const scatterChart = echarts.init(canvas, null, {
           width: width,
@@ -214,7 +214,7 @@ Page({
 
         return scatterChart;
       })
-    }, 2000)
+    // }, 2000)
 
 
   },

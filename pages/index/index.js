@@ -11,9 +11,10 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     array: [1, 2, 3, 4],
     i: 0,
+    k: 0,
     timerCallback: function () {
       console.log('计时器变化一次');
-    },
+    }
   },
   //事件处理函数
   bindViewTap: function () {
@@ -23,14 +24,22 @@ Page({
     })
   },
   onLoad: function () {
+
     watch(this, {
-      i: function (newVal) {
-        console.log("watch监听到i的变化" + newVal);
+      i: function (newVal, oldVal) {
+        console.log("watch监听到i的变化，现在的值：" + newVal + "原来的值：" + oldVal
+        );
+      },
+      k: function (newVal, oldVal) {
+        console.log("watch监听到k的变化，现在的值：" + newVal + "原来的值：" + oldVal
+        );
       }
     })
+
     computed(this, {
-      test2: function () {
+      "test2": function () {
         return 'computed封装：' + this.data.i + '次'
+        // return 'computed封装'
       }
     })
 
@@ -67,9 +76,6 @@ Page({
 
   },
   onReady: function () {
-    setTimeout(() => {
-      console.log(echarts)
-    }, 2000)
   },
   onShareAppMessage: function (res) {
     return {
