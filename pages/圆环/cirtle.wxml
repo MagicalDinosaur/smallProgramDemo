@@ -1,0 +1,2 @@
+<!--pages/圆环/cirtle.wxml-->
+<canvas class='canvasDom' canvas-id='canvasDom'></canvas>

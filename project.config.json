@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -48,6 +48,12 @@
 					"id": -1,
 					"name": "公共样式",
 					"pathName": "pages/publicwxss/public",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "圆环图表",
+					"pathName": "pages/圆环/cirtle",
 					"query": ""
 				}
 			]

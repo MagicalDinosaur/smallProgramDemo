@@ -4,7 +4,8 @@
     "pages/page2/index",
     "pages/logs/logs",
     "pages/echarts/echarts",
-    "pages/publicwxss/public"
+    "pages/publicwxss/public",
+    "pages/圆环/cirtle"
   ],
   "window": {
     "backgroundTextStyle": "light",

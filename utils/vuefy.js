@@ -4,8 +4,8 @@
  * data 当前上下文的data，key 键名，val 键值，fn 回调函数
  */
 function defineReactive(data, key, val, watchFn, computedFn) {
-  let realWatchFn = data['watchFn'];
-  let realComputedFn = data['computedFn'];
+  let realWatchFn = data['watchFn'] || false;
+  let realComputedFn = data['computedFn'] || false;
   Object.defineProperty(data, key, {
     configurable: true,
     enumerable: true,
@@ -39,7 +39,6 @@ function defineReactive(data, key, val, watchFn, computedFn) {
 function watch(ctx, obj) {
   // obj是watch监听的一个一个对象集合 
   Object.keys(obj).forEach(key => {
-    // console.log(key);
     defineReactive(ctx.data, key, ctx.data[key], function (newVal, oldVal, realKey) {
       // obj[key] 对应监听值的回调函数,key值判断当前是否是需要watch的字段
       realKey == key && obj[key].call(ctx, newVal, oldVal);
