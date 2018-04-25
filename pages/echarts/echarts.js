@@ -6,86 +6,112 @@ let chart = null;
 // 设置bar的值
 function getBarOption() {
   return {
-    color: ['#37a2da', '#32c5e9', '#67e0e3'],
+    title: {
+      
+    },
     tooltip: {
-      trigger: 'axis',
-      axisPointer: {            // 坐标轴指示器，坐标轴触发有效
-        type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
-      }
+      trigger: 'axis'
     },
     legend: {
-      data: ['热度', '正面', '负面']
+      data: []
     },
     grid: {
-      left: 20,
-      right: 20,
-      bottom: 15,
-      top: 40,
+      height: '100%',
+      width:"100%",
       containLabel: true
     },
-    xAxis: [
-      {
-        type: 'value',
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
-        },
-        axisLabel: {
-          color: '#666'
-        }
-      }
-    ],
-    yAxis: [
-      {
-        type: 'category',
-        axisTick: { show: false },
-        data: ['汽车之家', '今日头条', '百度贴吧', '一点资讯', '微信', '微博', '知乎'],
-        axisLine: {
-          lineStyle: {
-            color: '#999'
-          }
-        },
-        axisLabel: {
-          color: '#666'
-        }
-      }
-    ],
+    tooltip: {
+      show: false
+    },
+    xAxis: {
+      type: 'category',
+      boundaryGap: false,
+      axisLabel: {
+        color: "#BEBEBE",
+        fontSize: 10
+      },
+      axisTick: {
+        show: false
+      },
+      axisLine: {
+        show: false
+      },
+      data: ['第1周', '第2周', '第3周', '第4周', '第5周', '第6周', '第7周', '第8周'],
+      //   formatter:
+    },
+    yAxis: {
+      type: 'value',
+      axisLine: {
+        show: false
+      },
+      axisTick: {
+        show: false
+      },
+      axisLabel: {
+        color: "#BEBEBE",
+        fontSize: 10,
+      },
+
+
+    },
     series: [
       {
-        name: '热度',
-        type: 'bar',
-        label: {
+        name: '',
+        type: 'line',
+        data: [120, 132, 191, "-", "-", "-", "-"],
+        itemStyle: {
           normal: {
-            show: true,
-            position: 'inside'
+            lineStyle: {
+              width: 4,
+              color: 'rgba(22,150,234,1)',
+              type: 'solid'  //'dotted'虚线 'solid'实线
+            },
+            borderColor: "rgba(22,150,234,1)",
+            borderWidth: 8
+          },
+          emphasis: {
+            borderColor: "rgba(22,150,234,1)",
+            borderWidth: 8
           }
-        },
-        data: [300, 270, 340, 344, 300, 320, 310]
+
+        }
       },
       {
-        name: '正面',
-        type: 'bar',
-        stack: '总量',
-        label: {
+        name: '',
+        type: 'line',
+        smooth: false,   //关键点，为true是不支持虚线，实线就用true
+        connectNulls: true,
+        itemStyle: {
           normal: {
-            show: true
+            lineStyle: {
+              width: 4,
+              color: 'rgba(22,150,234,1)',
+              type: 'dotted'  //'dotted'虚线 'solid'实线
+            },
+            borderColor: "rgba(22,150,234,1)",
+            borderWidth: 8
           }
         },
-        data: [120, 102, 141, 174, 190, 250, 220]
+        data: ["-", "-", 191, "-", 330, "-", "-"]
       },
       {
-        name: '负面',
-        type: 'bar',
-        stack: '总量',
-        label: {
+        name: '',
+        type: 'line',
+        smooth: false,   //关键点，为true是不支持虚线，实线就用true
+        itemStyle: {
           normal: {
-            show: true,
-            position: 'left'
+            lineStyle: {
+              width: 4,
+              color: 'rgba(22,150,234,1)',
+              type: 'solid'  //'dotted'虚线 'solid'实线
+            },
+            borderColor: "rgba(22,150,234,1)",
+            borderWidth: 8
           }
         },
-        data: [-20, -32, -21, -34, -90, -130, -110]
-      }
+        data: ["-", "-", "-", "-", 330, 410, 460, 520]
+      },
+
     ]
   };
 }
@@ -202,18 +228,18 @@ Page({
     this.ecComponent = this.selectComponent('#mychart-dom-multi-scatter');
     let that = this;
     // setTimeout(() => {
-      that.ecComponent.init((canvas, width, height) => {
-        const scatterChart = echarts.init(canvas, null, {
-          width: width,
-          height: height
-        });
-        canvas.setChart(scatterChart);
+    that.ecComponent.init((canvas, width, height) => {
+      const scatterChart = echarts.init(canvas, null, {
+        width: width,
+        height: height
+      });
+      canvas.setChart(scatterChart);
 
-        that.scatterChart = scatterChart;
-        scatterChart.setOption(getScatterOption());
+      that.scatterChart = scatterChart;
+      scatterChart.setOption(getScatterOption());
 
-        return scatterChart;
-      })
+      return scatterChart;
+    })
     // }, 2000)
 
 

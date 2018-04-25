@@ -1,2 +1,8 @@
 <!--pages/圆环/cirtle.wxml-->
 <canvas class='canvasDom' canvas-id='canvasDom'></canvas>
+
+<view class="wrap">
+  <view class="circle"></view>
+  <view class="top"></view>
+  <view class="bottom"></view>
+</view>

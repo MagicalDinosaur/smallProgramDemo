@@ -1,0 +1,5 @@
+<!--pages/小督班图表/charts.wxml-->
+<view class="container">
+  <text>小督班图表</text>
+  <ec-canvas id="mychart-dom-multi-bar" canvas-id="mychart-multi-bar" ec="{{ ecLine }}"></ec-canvas>
+</view>
