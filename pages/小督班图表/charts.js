@@ -6,8 +6,7 @@ let chart = null;
 // 设置bar的值
 function getBarOption() {
   return {
-    title: { 
-
+    title: {
     },
     tooltip: {
       trigger: 'axis'
@@ -17,8 +16,8 @@ function getBarOption() {
     grid: {
       top: 20,
       bottom: 0,
-      left:20,
-      right:20,
+      left: 20,
+      right: 20,
       containLabel: true
     },
     tooltip: {
@@ -51,10 +50,10 @@ function getBarOption() {
         color: "#BEBEBE",
         fontSize: 10,
       },
-      splitLine:{
+      splitLine: {
         // show:false
-        lineStyle:{
-          color:"rgba(232,232,232,1)"
+        lineStyle: {
+          color: "rgba(232,232,232,1)"
         }
       }
     },
@@ -78,57 +77,27 @@ function getBarOption() {
           //   borderColor: "rgba(22,150,234,1)",
           //   borderWidth: 8
           // }
+        },
+        label:{
+          show:true
         }
+        // markPoint: {
+        //   symbol: "circle",
+        //   // 标注文字
+        //   label: {
+        //     color: "rgba(136,136,136,1)",
+        //     offset: [0, -15]
+        //   },
+        //   // 标注背景设置
+        //   itemStyle: {
+        //     color: "transparent",
+        //   },
+        //   data: [
+        //     { name: '周最低', value: 10, xAxis: 3, yAxis: 5 }
+        //   ],
+        // },
       },
-      // {
-      //   name: '',
-      //   type: 'line',
-      //   smooth: false,   //关键点，为true是不支持虚线，实线就用true
-      //   connectNulls: true,
-      //   itemStyle: {
-      //     normal: {
-      //       lineStyle: {
-      //         width: 1,
-      //         color: 'rgba(218,218,218,1)',
-      //         type: 'dotted'  //'dotted'虚线 'solid'实线
-      //       },
-      //       borderColor: "rgba(218,218,218,1)",
-      //       borderWidth: 4
-      //     }
-      //   },
-      //   data: ["-", "-", 4, "-", 6, "-", "-"]
-      // },
-      // {
-      //   name: '',
-      //   type: 'line',
-      //   smooth: false,   //关键点，为true是不支持虚线，实线就用true
-      //   itemStyle: {
-      //     normal: {
-      //       lineStyle: {
-      //         width: 4,
-      //         color: 'rgba(218,218,218,1)',
-      //         type: 'solid'  //'dotted'虚线 'solid'实线
-      //       },
-      //       borderColor: "rgba(218,218,218,1)",
-      //       borderWidth: 8
-      //     }
-      //   },
-      //   data: ["-", "-", "-", "-", 6, 6, 8, 10],
-      //   markPoint: {
-      //     symbol: "circle",
-      //     // 标注文字
-      //     label: {
-      //       color: "rgba(136,136,136,1)",
-      //       offset: [0, -15]
-      //     },
-      //     // 标注背景设置
-      //     itemStyle: {
-      //       color: "transparent",
-      //     },
-      //     data: [
-      //       { name: '周最低', value: 10, xAxis: 6, yAxis: 8 }
-      //     ],
-      //   },
+
       // },
 
       // 蓝色线条
@@ -146,11 +115,22 @@ function getBarOption() {
             borderColor: "rgba(22,150,234,1)",
             borderWidth: 4
           },
-          // emphasis: {
-          //   borderColor: "rgba(22,150,234,1)",
-          //   borderWidth: 2
-          // }
-        }
+        }, 
+        markPoint: {
+          symbol: "circle",
+          // 标注文字
+          label: {
+            color: "red",
+            offset: [0, -15]
+          },
+          // 标注背景设置
+          itemStyle: {
+            color: "transparent",
+          },
+          data: [
+            { name: '周最低', value: 8, xAxis: 3, yAxis: 3 }
+          ],
+        },
       },
       {
         name: '',
@@ -170,39 +150,6 @@ function getBarOption() {
         },
         data: ["-", "-", 6, "-", 8, "-", "-"]
       },
-      // {
-      //   name: '',
-      //   type: 'line',
-      //   smooth: false,   //关键点，为true是不支持虚线，实线就用true
-      //   itemStyle: {
-      //     normal: {
-      //       lineStyle: {
-      //         width: 4,
-      //         color: 'rgba(22,150,234,1)',
-      //         type: 'solid'  //'dotted'虚线 'solid'实线
-      //       },
-      //       borderColor: "rgba(22,150,234,1)",
-      //       borderWidth: 8
-      //     }
-      //   },
-      //   data: ["-", "-", "-", "-", 8, 10, 12],
-      //   markPoint: {
-      //     symbol:"circle",
-      //     // 标注文字
-      //     label:{
-      //       color:"rgba(22,150,234,1)",
-      //       offset:[0,-15]
-      //     },
-      //     // 标注背景设置
-      //     itemStyle:{
-      //       color:"transparent",
-      //     },
-      //     data: [
-      //       { type: 'max', name: '最大值' },
-      //     ],
-
-      //   },
-      // }
     ]
   };
 }
