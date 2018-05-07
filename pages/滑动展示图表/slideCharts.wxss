@@ -1,0 +1,59 @@
+/* pages/滑动展示图表/slideCharts.wxss*/
+
+.slide-content {
+  height: 400rpx;
+  width: 100%;
+  background: #bbb;
+  /* overflow-x: scroll; */
+  overflow: hidden;
+}
+
+.slide-charts {
+  width: 2000rpx;
+  height: 400rpx;
+  background: rgba(0, 200, 0, 0.2);
+  transform: translateX(-200rpx);
+  transition: all 2s;
+}
+
+.slide-item {
+  display: inline-block;
+  height: 100%;
+  text-align: center;
+  width: 80rpx;
+  margin: 0 20rpx;
+  position: relative;
+}
+
+.slide-item::after{
+  content: "";
+  position: absolute;
+  top: 15%;
+  height: 90%;
+  width: 5rpx;
+  background: #aaa;
+  z-index: 0;
+}
+
+
+.slide-item-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.slide-bar {
+  flex: 0 1 90%;
+  width: 80rpx;
+  height: 400rpx;
+  position: relative;
+}
+
+.slide-bar-content {
+  background: black;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  z-index: 5;
+}

@@ -1,0 +1,14 @@
+<!--pages/滑动展示图表/slideCharts.wxml-->
+<view class='slide-content'>
+  <view class='slide-charts' style='transform: translateX({{move}}rpx);'>
+    <view class='slide-item' wx:for="{{historyData}}" wx:item="{{item}}" wx:key="{{item}}">
+      <view class='slide-item-content'>
+        <view class='slide-number'>{{item}}</view>
+        <view class='slide-bar' >
+          <view class='slide-bar-content' style='height:{{item*50}}rpx'></view>
+        </view>
+        <!-- <view class='slide-line'></view> -->
+      </view>
+    </view>
+  </view>
+</view>

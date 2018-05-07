@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -61,6 +61,11 @@
 					"name": "小督班图表",
 					"pathName": "pages/小督班图表/charts",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "滑动图表",
+					"pathName": "pages/滑动展示图表/slideCharts"
 				}
 			]
 		}
