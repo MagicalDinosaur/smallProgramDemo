@@ -1,8 +1,7 @@
 <!--pages/滑动展示图表/slideCharts.wxml-->
 <view class='slide-content'>
-  <scroll-view bindscroll="chartScroll" scroll-x scroll-left="{{startScroll}}" scroll-with-animation>
-   <!--  -->
-    <view class='slide-charts' bindtouchstart='clickStart' style='transform: translateX({{move}}px);'  bindtouchmove='clickMove' bindtouchend='clickEnd' >
+  <scroll-view bindscroll="chartScroll" scroll-x scroll-left="{{startScroll}}" scroll-with-animation bindtouchend='clickEnd' >
+    <view class='slide-charts'>
       <view class='slide-item' wx:for="{{historyData}}" wx:item="{{item}}" wx:key="{{item}}">
         <view class='slide-item-content'>
           <view class='slide-number'>{{item}}</view>

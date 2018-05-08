@@ -20,7 +20,7 @@ Page({
   onLoad: function (options) {
     let that = this
     wx.createSelectorQuery().selectAll('.slide-bar').boundingClientRect(function (rects) {
-      console.log(rects[0].width)// 节点的宽度
+      console.log(rects[0].width)// 获取bar的实际宽度
       that.setData({
         barWidth: rects[0].width
       })
@@ -29,34 +29,19 @@ Page({
     wx.getSystemInfo({
       success: function (res) {
         that.setData({
-          nowIndex: that.data.historyData.length,
           windowWidth: res.windowWidth
         })
         // 滚动到最后一个时间轴
         setTimeout(() => {
           that.setData({
-            startScroll: that.data.barWidth * (that.data.historyData.length - 0.5) - res.windowWidth / 2
+            startScroll: that.data.barWidth * (that.data.historyData.length - 0.5) - res.windowWidth / 2,
+            nowIndex: that.data.historyData.length,
           })
         }, 2000)
       }
     })
   },
-  // 滑动开始
-  clickStart(e) {
-    console.log("开始：" + e.touches[0].pageX)
-    this.setData({
-      startX: e.touches[0].pageX,
-      // move: 0
-    })
-  },
   // 滑动过程
-  clickMove(e) {
-    let moveX = Number(e.touches[0].pageX - this.data.startX)
-    console.log("移动：" + moveX)
-    this.setData({
-      moveX: moveX
-    })
-  },
   chartScroll(e) {
     console.log(e.detail.scrollLeft)
     this.setData({
@@ -66,7 +51,7 @@ Page({
   // 滑动结束
   clickEnd(e) {
     let allWidth = this.data.barWidth
-    let nowIndex = Math.round((this.data.scrollX + this.data.windowWidth / 2) / this.data.barWidth+0.5)
+    let nowIndex = Math.round((this.data.scrollX + this.data.windowWidth / 2) / this.data.barWidth + 0.5)
     this.setData({
       nowIndex: nowIndex,
       startScroll: this.data.barWidth * (nowIndex - 0.5) - this.data.windowWidth / 2
