@@ -1,16 +1,20 @@
 <!--pages/滑动展示图表/slideCharts.wxml-->
 <view class='slide-content'>
-  <scroll-view class='slide-charts' style='transform: translateX({{move}}px);' bindtouchstart='clickStart' bindtouchmove='clickMove' bindtouchend='clickEnd' bindscroll="chartScroll">
-    <view class='slide-item' wx:for="{{historyData}}" wx:item="{{item}}" wx:key="{{item}}">
-      <view class='slide-item-content'>
-        <view class='slide-number'>{{item}}</view>
-        <view class='slide-bar'>
-          <view class='slide-bar-content' style='height:{{item*20}}rpx'></view>
+  <scroll-view bindscroll="chartScroll" scroll-x scroll-left="{{startScroll}}" scroll-with-animation>
+   <!--  -->
+    <view class='slide-charts' bindtouchstart='clickStart' style='transform: translateX({{move}}px);'  bindtouchmove='clickMove' bindtouchend='clickEnd' >
+      <view class='slide-item' wx:for="{{historyData}}" wx:item="{{item}}" wx:key="{{item}}">
+        <view class='slide-item-content'>
+          <view class='slide-number'>{{item}}</view>
+          <view class='slide-bar'>
+            <view class='slide-bar-content' style='height:{{item*20}}rpx'></view>
+          </view>
+          <!-- <view class='slide-line'></view> -->
         </view>
-        <!-- <view class='slide-line'></view> -->
       </view>
     </view>
   </scroll-view>
+
 </view>
 <!-- 底部信息  -->
 <view class='chart-bottom'>

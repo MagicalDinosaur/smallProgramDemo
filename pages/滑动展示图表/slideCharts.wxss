@@ -18,8 +18,10 @@ page {
   width: 2000rpx;
   height: 450rpx;
   background: rgba(0, 200, 0, 0.2);
-  transform: translateX(-200rpx);
+  /* transform: translateX(-200rpx); */
   transition: all 1s;
+  overflow-x: scroll;
+  /* padding-left: 50%; */
 }
 
 .slide-item {
@@ -35,7 +37,9 @@ page {
   position: absolute;
   top: 15%;
   height: 90%;
-  width: 5rpx;
+  width: 6rpx;
+  left: 50%;
+  margin-left: -3rpx;
   background: #aaa;
   z-index: 0;
 }
@@ -49,17 +53,17 @@ page {
 
 .slide-bar {
   flex: 0 1 90%;
-   width: 80rpx; 
+  width: 80rpx;
   height: 400rpx;
   position: relative;
   overflow: hidden;
-  /* box-sizing: border-box;  */
-  padding: 0 20rpx;
+  box-sizing: border-box;
+  padding: 0 10rpx;
 }
 
 .slide-bar-content {
   background: black;
-   width: 80rpx; 
+  width: 60rpx;
   position: absolute;
   bottom: 0;
   z-index: 5;
@@ -84,4 +88,10 @@ page {
   left: 50%;
   margin-left: -20rpx;
   z-index: 30;
+}
+
+.test {
+  background: #ddd;
+  width: 200%;
+  height: 200rpx;
 }
