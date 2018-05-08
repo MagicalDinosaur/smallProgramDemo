@@ -1,31 +1,36 @@
 /* pages/滑动展示图表/slideCharts.wxss*/
 
+page {
+  height: 2000rpx;
+  overflow-y: scroll;
+}
+
 .slide-content {
-  height: 400rpx;
+  height: 450rpx;
   width: 100%;
   background: #bbb;
-  /* overflow-x: scroll; */
-  overflow: hidden;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
 }
 
 .slide-charts {
   width: 2000rpx;
-  height: 400rpx;
+  height: 450rpx;
   background: rgba(0, 200, 0, 0.2);
   transform: translateX(-200rpx);
-  transition: all 2s;
+  transition: all 1s;
 }
 
 .slide-item {
   display: inline-block;
   height: 100%;
   text-align: center;
-  width: 80rpx;
-  margin: 0 20rpx;
+  /* width: 80rpx; */
   position: relative;
 }
 
-.slide-item::after{
+.slide-item::after {
   content: "";
   position: absolute;
   top: 15%;
@@ -34,7 +39,6 @@
   background: #aaa;
   z-index: 0;
 }
-
 
 .slide-item-content {
   display: flex;
@@ -45,15 +49,39 @@
 
 .slide-bar {
   flex: 0 1 90%;
-  width: 80rpx;
+   width: 80rpx; 
   height: 400rpx;
   position: relative;
+  overflow: hidden;
+  /* box-sizing: border-box;  */
+  padding: 0 20rpx;
 }
 
 .slide-bar-content {
   background: black;
-  width: 100%;
+   width: 80rpx; 
   position: absolute;
   bottom: 0;
   z-index: 5;
+}
+
+.chart-bottom {
+  width: 100%;
+  height: 300rpx;
+  background: #fff;
+  position: relative;
+}
+
+.chart-bottom:after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 20rpx solid transparent;
+  border-right: 20rpx solid transparent;
+  border-bottom: 35rpx solid #fff;
+  position: absolute;
+  top: -20rpx;
+  left: 50%;
+  margin-left: -20rpx;
+  z-index: 30;
 }

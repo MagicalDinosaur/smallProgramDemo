@@ -5,73 +5,66 @@ Page({
    * 页面的初始数据
    */
   data: {
-    historyData:[5,2,3,4,5,6,6,4,3,3],
-    move:-500
+    historyData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    startX: "",
+    nowX: 0,
+    move: 0,
+    moveX: 0,
+    barWidth: 100,
+    nowIndex: 3,//当前位置的索引，从1开始
+    scale:1
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that=this
-    setTimeout(()=>{
-      that.setData({
-        move:500
-      })
-    },1000)
-    setTimeout(() => {
-      that.setData({
-        move: -500
-      })
-    }, 2000)
+    let that = this
+    // setTimeout(() => {
+    //   that.setData({
+    //     move: 500
+    //   })
+    // }, 1000)
+    wx.getSystemInfo({
+      success: function (res) {
+        let scale = res.windowWidth/750
+        that.setData({
+          scale:scale
+        })
+        // 滚动到最后一个柱子
+        setTimeout(() => {
+          that.setData({
+            move: -80 *scale* (that.data.historyData.length-0.5)
+          })
+        }, 2000)
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+  clickStart(e) {
+    console.log("开始：" + e.touches[0].pageX)
+    this.setData({
+      startX: e.touches[0].pageX,
+      move: 0
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  clickMove(e) {
+    let moveX = Number(e.touches[0].pageX - this.data.startX)
+    console.log("移动：" + moveX)
+    this.setData({
+      moveX: moveX
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  clickEnd(e) {
+    let nowX = this.data.nowX + this.data.moveX
+    let nowIndex = 3 - Math.round(nowX / this.data.barWidth)
+    let moveX = -((nowIndex - 3) * this.data.barWidth + nowX)
+    console.log(moveX, nowX)
+    this.setData({
+      startX: 0,
+      nowX: nowX,
+      nowIndex: nowIndex,
+      move: moveX
+    })
   }
 })
