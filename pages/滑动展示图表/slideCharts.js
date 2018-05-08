@@ -20,11 +20,6 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    // setTimeout(() => {
-    //   that.setData({
-    //     move: 500
-    //   })
-    // }, 1000)
     wx.getSystemInfo({
       success: function (res) {
         let scale = res.windowWidth/750
@@ -40,7 +35,7 @@ Page({
       }
     })
   },
-
+  // 滑动开始
   clickStart(e) {
     console.log("开始：" + e.touches[0].pageX)
     this.setData({
@@ -48,6 +43,7 @@ Page({
       move: 0
     })
   },
+  // 滑动过程
   clickMove(e) {
     let moveX = Number(e.touches[0].pageX - this.data.startX)
     console.log("移动：" + moveX)
@@ -55,6 +51,7 @@ Page({
       moveX: moveX
     })
   },
+  // 滑动结束
   clickEnd(e) {
     let nowX = this.data.nowX + this.data.moveX
     let nowIndex = 3 - Math.round(nowX / this.data.barWidth)
