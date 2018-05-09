@@ -5,13 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    historyData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-    startScroll: 0,
+    historyData: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+    moveScroll: 0,
     barWidth: 0,
     windowWidth: 0,//实际的宽度
-    nowIndex: 3,//当前位置的索引，从1开始
+    nowIndex: 0,//当前位置的索引，从1开始
     scale: 1,
-    scrollX: 0
+    chartLeft: 0,
+    isTouch: false,
+    scrollTimeout: "",//滚动节流定时器
   },
 
   /**
@@ -20,41 +22,60 @@ Page({
   onLoad: function (options) {
     let that = this
     wx.createSelectorQuery().selectAll('.slide-bar').boundingClientRect(function (rects) {
-      console.log(rects[0].width)// 获取bar的实际宽度
-      that.setData({
-        barWidth: rects[0].width
+      // 获取bar的实际宽度
+      wx.getSystemInfo({
+        success: function (res) {
+          let chartLeft = (res.windowWidth - rects[0].width) / 2
+          console.log(rects[0].width, that.data.historyData.length - 1)
+          that.setData({
+            chartLeft: chartLeft,
+            chartWidth: (that.data.historyData.length-0.5) * rects[0].width+res.windowWidth/2
+          })
+          setTimeout(() => {
+            that.setData({
+              // 滚动到最后一个时间轴
+              moveScroll: rects[0].width * (that.data.historyData.length - 1),
+              nowIndex: that.data.historyData.length,
+              barWidth: rects[0].width,
+              windowWidth: res.windowWidth
+            })
+          }, 1000)
+        }
       })
     }).exec()
 
-    wx.getSystemInfo({
-      success: function (res) {
-        that.setData({
-          windowWidth: res.windowWidth
-        })
-        // 滚动到最后一个时间轴
-        setTimeout(() => {
-          that.setData({
-            startScroll: that.data.barWidth * (that.data.historyData.length - 0.5) - res.windowWidth / 2,
-            nowIndex: that.data.historyData.length,
-          })
-        }, 2000)
-      }
+  },
+  // 滑动开始
+  clickStart(e) {
+    this.setData({
+      isTouch: true
     })
   },
   // 滑动过程
   chartScroll(e) {
-    console.log(e.detail.scrollLeft)
-    this.setData({
-      scrollX: e.detail.scrollLeft
-    })
+    console.log("滑动" + e.detail.scrollLeft)
+    let that = this
+    clearTimeout(this.data.scrollTimeout)
+    if (this.data.isTouch) {
+      this.setData({
+        scrollX: e.detail.scrollLeft
+      })
+      // 节流函数，当滑动停止的100毫秒后执行结束事件
+      // 因为ios下有惯性滑动，这里不能直接touchend事件
+      this.setData({
+        scrollTimeout: setTimeout(() => {
+          that.clickEnd()
+        }, 100)
+      })
+    }
   },
   // 滑动结束
-  clickEnd(e) {
-    let allWidth = this.data.barWidth
-    let nowIndex = Math.round((this.data.scrollX + this.data.windowWidth / 2) / this.data.barWidth + 0.5)
+  clickEnd() {
+    let nowIndex = Math.round(this.data.scrollX / this.data.barWidth + 1)
     this.setData({
       nowIndex: nowIndex,
-      startScroll: this.data.barWidth * (nowIndex - 0.5) - this.data.windowWidth / 2
+      moveScroll: this.data.barWidth * (nowIndex - 1),
+      isTouch: false
     })
   }
 })
