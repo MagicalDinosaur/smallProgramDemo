@@ -5,9 +5,9 @@
       <view class='slide-item ' wx:for="{{historyData}}" wx:item="{{item}}" wx:key="{{item}}" wx:index="{{index}}">
         <view class=' slide-item-content'>
           <view class='slide-number'>{{item}}</view>
-          <view class='slide-bar'>
+          <!-- <view class='slide-bar'> -->
             <view class="slide-bar-content {{index==nowIndex-1?'slide-bar-isSelect':'' }}" style='height:{{item*20}}rpx'></view>
-          </view>
+          <!-- </view> -->
         </view>
       </view>
     </view>

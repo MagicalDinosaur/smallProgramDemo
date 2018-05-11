@@ -21,7 +21,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    wx.createSelectorQuery().selectAll('.slide-bar').boundingClientRect(function (rects) {
+    wx.createSelectorQuery().selectAll('.slide-item-content').boundingClientRect(function (rects) {
       // 获取bar的实际宽度
       wx.getSystemInfo({
         success: function (res) {

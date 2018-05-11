@@ -20,11 +20,12 @@ page {
   transition: all 1s;
   overflow-x: scroll;
   overflow-y: hidden;
+  display: flex;
 }
 
 .slide-item {
-  display: inline-block;
-  height: 100%;
+  /* display: inline-block; */
+  height: 450rpx;
   text-align: center;
   width: 100rpx;
   position: relative;
@@ -38,35 +39,34 @@ page {
   width: 2rpx;
   left: 50%;
   margin-left: -1rpx;
-  background: #aaa;
+  /* background: #aaa; */
   z-index: 0;
 }
 
 .slide-item-content {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: center;
   width: 100rpx;
+  height: 450rpx;
 }
 
 .slide-bar {
   width: 100rpx;
-  height: 400rpx;
   position: relative;
-  overflow: hidden;
   box-sizing: border-box;
   padding: 0 20rpx;
 }
 
 .slide-bar-content {
   background: linear-gradient(#1696ea, #eee);
-  /* background: linear-gradient(#1696ea, #60bdf1); */
   width: 60rpx;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0; */
   z-index: 5;
   border-radius: 30rpx 30rpx 0 0;
+  margin-top: 20rpx;
 }
 
 .slide-bar-isSelect {
