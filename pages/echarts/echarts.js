@@ -7,7 +7,7 @@ let chart = null;
 function getBarOption() {
   return {
     title: {
-      
+
     },
     tooltip: {
       trigger: 'axis'
@@ -17,7 +17,7 @@ function getBarOption() {
     },
     grid: {
       height: '100%',
-      width:"100%",
+      width: "100%",
       containLabel: true
     },
     tooltip: {
@@ -118,82 +118,23 @@ function getBarOption() {
 
 // 设置 scatter的值
 function getScatterOption() {
-
-  var data = [];
-  var data2 = [];
-
-  for (var i = 0; i < 10; i++) {
-    data.push(
-      [
-        Math.round(Math.random() * 100),
-        Math.round(Math.random() * 100),
-        Math.round(Math.random() * 40)
-      ]
-    );
-    data2.push(
-      [
-        Math.round(Math.random() * 100),
-        Math.round(Math.random() * 100),
-        Math.round(Math.random() * 100)
-      ]
-    );
-  }
-
-  var axisCommon = {
-    axisLabel: {
-      textStyle: {
-        color: '#C8C8C8'
-      }
-    },
-    axisTick: {
-      lineStyle: {
-        color: '#fff'
-      }
-    },
-    axisLine: {
-      lineStyle: {
-        color: '#C8C8C8'
-      }
-    },
-    splitLine: {
-      lineStyle: {
-        color: '#C8C8C8',
-        type: 'solid'
-      }
-    }
-  };
-
   return {
-    color: ["#FF7070", "#60B6E3"],
-    backgroundColor: '#eee',
-    xAxis: axisCommon,
-    yAxis: axisCommon,
-    legend: {
-      data: ['aaaa', 'bbbb']
+    xAxis: {
+      type: 'category',
+      data: ['1', '2', '3', '4', '5', '6', '7','8','9']
     },
-    visualMap: {
-      show: false,
-      max: 100,
-      inRange: {
-        symbolSize: [20, 70]
-      }
-    },
+    yAxis: {
+      type: 'value'
+    }, dataZoom: [{
+      type: 'inside',
+      start: 0,
+      end: 30
+    }],
     series: [{
-      type: 'scatter',
-      name: 'aaaa',
-      data: data
-    },
-    {
-      name: 'bbbb',
-      type: 'scatter',
-      data: data2
-    }
-    ],
-    animationDelay: function (idx) {
-      return idx * 50;
-    },
-    animationEasing: 'elasticOut'
-  };
+      data: [120, 200, 150, 80, 70, 110, 130,140,160],
+      type: 'bar'
+    }]
+  }
 }
 
 Page({
