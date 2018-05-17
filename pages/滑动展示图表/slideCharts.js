@@ -53,7 +53,7 @@ Page({
   },
   // 滑动过程
   chartScroll(e) {
-    console.log("滑动" + e.detail.scrollLeft)
+    // console.log("滑动" + e.detail.scrollLeft)
     let that = this
     clearTimeout(this.data.scrollTimeout)
     if (this.data.isTouch) {
@@ -71,6 +71,7 @@ Page({
   },
   // 滑动结束
   clickEnd() {
+    console.log('滑动结束')
     let nowIndex = Math.round(this.data.scrollX / this.data.barWidth + 1)
     this.setData({
       nowIndex: nowIndex,

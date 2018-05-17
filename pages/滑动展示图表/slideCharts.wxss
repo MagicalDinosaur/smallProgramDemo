@@ -6,17 +6,16 @@ page {
 }
 
 .slide-content {
-  height: 450rpx;
+  height: 492rpx;
   width: 100%;
-  background: #eee;
+  background: linear-gradient(#1797eb, #3cabef);
   overflow-x: scroll;
   overflow-y: hidden;
   position: relative;
 }
 
 .slide-charts {
-  height: 450rpx;
-  /* background: rgba(0, 200, 0, 0.2); */
+  height: 100%;
   transition: all 1s;
   overflow-x: scroll;
   overflow-y: hidden;
@@ -24,11 +23,11 @@ page {
 }
 
 .slide-item {
-  /* display: inline-block; */
-  height: 450rpx;
+  height: 492rpx;
   text-align: center;
-  width: 100rpx;
+  width: 124rpx;
   position: relative;
+  color: #92d6f4;
 }
 
 .slide-item::after {
@@ -39,7 +38,6 @@ page {
   width: 2rpx;
   left: 50%;
   margin-left: -1rpx;
-  /* background: #aaa; */
   z-index: 0;
 }
 
@@ -48,30 +46,32 @@ page {
   flex-direction: column;
   justify-content: flex-end;
   align-items: center;
-  width: 100rpx;
+  width: 124rpx;
   height: 450rpx;
 }
 
-.slide-bar {
-  width: 100rpx;
-  position: relative;
-  box-sizing: border-box;
-  padding: 0 20rpx;
-}
-
 .slide-bar-content {
-  /* background: linear-gradient(#1696ea, #eee); */
-  background: #ddd;
+  background: linear-gradient(#5cbdf4, #8fd6f6);
   width: 40rpx;
-  /* position: absolute; */
-  /* bottom: 0; */
   z-index: 5;
-  border-radius: 5rpx;
-  margin-top: 20rpx;
+  border-radius: 4rpx;
+  margin-top: 24rpx;
 }
 
-.slide-bar-isSelect {
-  background: #1696ea;
+.slide-number {
+  font-size: 20rpx;
+  color: #92d6f4;
+  text-align: center;
+  line-height: 24rpx;
+  margin-top: 24rpx;
+}
+
+.slide-bar-isSelect .slide-bar-content {
+  background: #fff;
+}
+
+.slide-bar-isSelect .slide-number {
+  color: #fff;
 }
 
 .chart-bottom {
@@ -79,24 +79,26 @@ page {
   height: 300rpx;
   background: #fff;
   position: relative;
-  text-align: center;  
+  text-align: center;
 }
 
 .chart-bottom:after {
   content: "";
-  width: 0;
-  height: 0;
-  border-left: 20rpx solid transparent;
+  width: 63rpx;
+  height: 63rpx;
+  /* border-left: 20rpx solid transparent;
   border-right: 20rpx solid transparent;
-  border-bottom: 35rpx solid #fff;
+  border-bottom: 20rpx solid #fff; */
+  transform: rotate(45deg);
+  background: #fff;
   position: absolute;
-  top: -20rpx;
+  /* top: -16rpx; */
   left: 50%;
-      margin-left: -20rpx;/////////    
-  z-index: 30;
+  margin-left: -30rpx;
+  border-radius: 6rpx;
 }
 
-.chart-bottom text{
+.chart-bottom text {
   display: inline-block;
   margin-top: 50rpx;
   font-size: 80rpx;
