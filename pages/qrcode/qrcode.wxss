@@ -1,0 +1,5 @@
+/* pages/qrcode/qrcode.wxss */
+
+page {
+  text-align: center;
+}
