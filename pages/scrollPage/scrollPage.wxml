@@ -1,0 +1,24 @@
+<!--pages/scrollPage/scrollPage.wxml-->
+<view class='content'>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='nav'>导航</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+  <view class='item'>我是内容栏</view>
+</view>

@@ -8,7 +8,8 @@
     "pages/圆环/cirtle",
     "pages/小督班图表/charts",
     "pages/滑动展示图表/slideCharts",
-    "pages/qrcode/qrcode"
+    "pages/qrcode/qrcode",
+    "pages/scrollPage/scrollPage"
   ],
   "window": {
     "backgroundTextStyle": "light",

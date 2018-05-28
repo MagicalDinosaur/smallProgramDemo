@@ -1,5 +1,5 @@
 <!--pages/圆环/cirtle.wxml-->
-<view class='father'>
-<canvas class='canvasDom' canvas-id='canvasDom'></canvas>
+<view class='father' wx:if="{{!close}}">
+  <canvas class='canvasDom' canvas-id='canvasDom'></canvas>
 </view>
-
+<button bindtap='clickBtn'>点击开关</button>

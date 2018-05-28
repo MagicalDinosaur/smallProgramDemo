@@ -1,19 +1,23 @@
 /* pages/圆环/cirtle.wxss */
 @import "../../utils/public.wxss";
-page{
+
+page {
   height: 2000rpx;
 }
+
 .canvasDom {
   width: 500rpx;
   height: 400rpx;
-  /* margin: 50rpx auto; */
-  /* background: #ccc; */
+  /* opacity: 0; *//* margin: 50rpx auto; *//* background: #ccc; */
 }
-.father{
+
+.father {
   margin-top: 200rpx;
   border: 5px solid #eee;
-
+  width: 500rpx;
+  height: 400rpx;
 }
+
 /* .circle {
   width: 300rpx;
   height: 300rpx;
@@ -66,7 +70,6 @@ page{
   overflow: hidden;
 }
 
-
 .circle {
   height: 100%;
   box-sizing: border-box;
@@ -107,8 +110,8 @@ page{
   /* animation: 5s back-half linear 1s;   */
   animation-fill-mode: forwards;
   transform: rotate(135deg);
-   /* background: rgba(22, 150, 234, 0.8);   */
-   overflow: hidden;
+  /* background: rgba(22, 150, 234, 0.8);   */
+  overflow: hidden;
   /* opacity: 0;  */
 }
 
@@ -119,8 +122,9 @@ page{
   /* animation: 5s front-half linear; */
   animation-fill-mode: forwards;
   transform: rotate(45deg);
-   /* background: rgba(220, 150, 234, 0.8);  */
+  /* background: rgba(220, 150, 234, 0.8);  */
 }
+
 /* .top::after {
   z-index: 0;
   content: "";

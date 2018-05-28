@@ -6,7 +6,8 @@ Page({
    */
   data: {
     currentAngle: 0.8,
-    endAngle: 2
+    endAngle: 2,
+    close: false
   },
 
   /**
@@ -14,67 +15,15 @@ Page({
    */
   onLoad: function (options) {
     // 绘制初始状态
-    let that=this;
-    let timeout = setInterval(() => {
-      if (that.data.currentAngle >= that.data.endAngle) {
-        console.log('ok')
-        clearInterval(timeout)
-      }
-      this.setData({
-        currentAngle: this.data.currentAngle + 0.1
-      })
-      this.drawCharts();
-    }, 50)
-
+    let that = this;
+    this.drawCharts();
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  clickBtn: function () {
+    this.setData({
+      close: !this.data.close
+    })
+    this.drawCharts();
   },
 
   drawCharts: function () {
