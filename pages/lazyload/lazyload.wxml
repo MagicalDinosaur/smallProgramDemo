@@ -1,0 +1,7 @@
+<view class='lazyload'>
+  <view wx:for="{{imgUrls}}">
+    <view class='left'>
+      <image src='{{item.url}}'></image>
+    </view>
+  </view>
+</view>

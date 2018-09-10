@@ -9,7 +9,8 @@
     "pages/小督班图表/charts",
     "pages/滑动展示图表/slideCharts",
     "pages/qrcode/qrcode",
-    "pages/scrollPage/scrollPage"
+    "pages/scrollPage/scrollPage",
+    "pages/lazyload/lazyload"
   ],
   "window": {
     "backgroundTextStyle": "light",
