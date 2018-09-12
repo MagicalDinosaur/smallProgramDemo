@@ -1,7 +1,12 @@
-<view class='lazyload'>
-  <view wx:for="{{imgUrls}}">
-    <view class='left'>
-      <image src='{{item.url}}'></image>
-    </view>
+<!-- <view class='lazyload'>
+  <view class='left' id='left'>
+    <image class='img{{index}} item' src="{{item.show?item.url: '' }}" wx:for="{{imgUrls}}" wx:key="{{index}}" wx:if="{{index%2}}" ></image>
   </view>
-</view>
+  <view class='right'>
+    <image class='img{{index}} item' src="{{item.show?item.url: '' }}" wx:for="{{imgUrls}}" wx:key="{{index}}" wx:if="{{!(index%2)}}"></image>
+  </view>
+</view> -->
+
+<scroll-view scroll-y="true" class='lazyload'>
+  <image class='item' src="{{item.show?item.url: '' }}" wx:for="{{imgUrls}}" wx:key="{{index}}"></image>
+</scroll-view>

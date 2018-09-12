@@ -1,1 +1,21 @@
 /* pages/lazyload/lazyload.wxss */
+
+.lazyload {
+  display: flex;
+}
+
+.left, .right {
+  width: 50%;
+  height: auto;
+  margin: 0 5rpx;
+}
+
+image {
+  width: 80%;
+  padding: 5rpx;
+  margin: 5rpx auto;
+  border: 2rpx solid #000;
+  box-sizing: border-box;
+  display: block;
+  background: rgba(0,0,0,0.2)
+}
