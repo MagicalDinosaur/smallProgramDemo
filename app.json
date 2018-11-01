@@ -10,7 +10,8 @@
     "pages/滑动展示图表/slideCharts",
     "pages/qrcode/qrcode",
     "pages/scrollPage/scrollPage",
-    "pages/lazyload/lazyload"
+    "pages/lazyload/lazyload",
+    "pages/rpx探索/rpx"
   ],
   "window": {
     "backgroundTextStyle": "light",

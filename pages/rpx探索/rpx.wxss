@@ -1,0 +1,15 @@
+/* pages/rpx探索/rpx.wxss */
+.fs20 {
+  width: 200rpx;
+  font-size: 20rpx;
+  background: #aaa;
+  display: flex;
+}
+
+.fs40 {
+  width: 200rpx;
+  font-size: 40rpx;
+  background: #aaa;
+  display: flex;
+}
+
