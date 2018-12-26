@@ -11,7 +11,8 @@
     "pages/qrcode/qrcode",
     "pages/scrollPage/scrollPage",
     "pages/lazyload/lazyload",
-    "pages/rpx探索/rpx"
+    "pages/rpx探索/rpx",
+    "cli/page/page"
   ],
   "window": {
     "backgroundTextStyle": "light",
