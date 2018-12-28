@@ -1,8 +1,7 @@
 #!/bin/bash
-
-pathname="pages"
-template="cli/page"
 num=("1" "2" "3")
+pathname="pages"
+template=("cli/page")
 
 # 复制page
 function inputPageName(){
@@ -17,7 +16,7 @@ function inputPageName(){
       echo "\033[31mwarn: page [$pageName] is exist!\033[0m"
   else
     # cp 复制模版到新建路径
-    cp -iR $template $targetPath 
+    cp -iR ${template[0]} $targetPath 
     for file in `ls ./$template`
     do
       suffixName=${file#*.}
