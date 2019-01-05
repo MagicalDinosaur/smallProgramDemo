@@ -1,23 +1,23 @@
 #!/bin/bash
 num=("1" "2" "3")
-pathname="pages"
-template=("cli/page")
+pathname=("pages" "component" "packages")
+template=("cli/page" "cli/component" "cli/page")
 
-# 复制page
-function inputPageName(){
+# 复制page函数
+function copyFile(){
   while [ -z $pageName ]
   do 
     printf "\033[32mplease input page Name : \033[0m"
     read pageName
   done
-  targetPath="$pathname/$pageName"
+  targetPath="${pathname[$1]}/$pageName"
   if [ -d $targetPath ]
     then
       echo "\033[31mwarn: page [$pageName] is exist!\033[0m"
   else
     # cp 复制模版到新建路径
-    cp -iR ${template[0]} $targetPath 
-    for file in `ls ./$template`
+    cp -iR ${template[$1]} $targetPath 
+    for file in `ls ./${template[$1]}`
     do
       suffixName=${file#*.}
       lastName="$pageName.$suffixName"
@@ -29,11 +29,17 @@ function inputPageName(){
 }
 
 # 复制文件的函数
-function copyFile(){
+function choiceType(){
   # 复制page
   if [ $type == ${num[0]} ]
     then 
-      inputPageName $type
+      copyFile 0
+  elif [ $type == ${num[1]} ]
+    then
+      copyFile 1
+  elif [ $type == ${num[2]} ]
+    then
+      copyFile 2
   fi
 }
 
@@ -46,30 +52,7 @@ do
   echo "【3】package"
   read type
 done
-# echo "your select is $type"
-copyFile
 
-# if [ $type != "1" ]
-#   then 
-#     echo "不是1"
-# fi
-
-# a=1
-# b=1
-# if [ $a == $b ]
-# then
-#    echo "a 等于 b"
-# fi
-
-# else
-#   echo "your select is $type"
-#   targetPath="$pathname/$name"
-#   if [ -d $targetPath ]
-#   then
-#     echo "page name exist"
-#   else
-#     cp -iR $template $targetPath
-#     echo "complete!"
-#   fi
-# fi                                                                                        
+choiceType
+                                                                                 
 
