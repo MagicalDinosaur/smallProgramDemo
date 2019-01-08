@@ -1,62 +1,74 @@
-let inquirer = require('inquirer')
-// 试图为NodeJs做一个可嵌入式的美观的命令行界面
+const inquirer = require('inquirer')
 const path = require('path')
 const fs = require('fs')
-const glob = require('glob')
 const chalk = require('chalk')
 
-console.log(chalk.yellow('操作说明：'))
+let temFolders = {
+    "package": path.join(__dirname, 'page'),
+    "page": path.join(__dirname, 'page'),
+    "component": path.join(__dirname, 'component')
+}
+let targetFolderRoots = {
+    "package": "packages/",
+    "page": "pages/",
+    "component": "component/"
+}
 
-
-// const allPages = []
-// glob.sync('./').forEach((entry) => {
-//     const basename = path.basename(entry, path.extname(entry))
-//     const tmp = entry.split('/').splice(-2) // 页面文件夹名字
-//     const folderName = tmp[0]
-//     allPages.push(folderName)
-// })
-// console.log(allPages)
-
-
-
-// 选择一个类目
-let a = inquirer.prompt([{
+// 首先选择一个类目
+inquirer.prompt([{
     type: 'list',
     name: 'type',
     message: 'Select a type you will create:',
-    choices: ['pages', 'component', 'package'],
+    choices: ['page', 'component', 'package'],
 }]).then((answers) => {
-    // console.log('结果为:');
-    // console.log(answers);
+    console.log(chalk.yellow("如果建立子目录直接加'/'分隔即可"))
+    // 输入文件或目录名
     inquirer.prompt([{
         type: 'input',
         name: 'name',
         message: 'Input new page name:'
-    }]).then((item) => {
-        // console.log(name)
-        // fs.ReadStream('cli/page', function (err, data) {
-        //     if (err) throw err;
-        //     console.log(data)
-        // })
-        let temFiles = path.join(__dirname, 'page');
-        // console.log(temFile);
-        // let targetFile = path.join(__dirname, item.name);
-        
-        // console.log(targetFile);
-        fs.readdirSync(temFiles).forEach((val, index) => {
-            const extname = path.extname(val)
-            let targetFile = `pages/${item.name}/${item.name}${extname}` ;
-            console.log(targetFile)
-            let temFile = path.join(__dirname, `page/${val}`);
-            fs.writeFileSync(targetFile, fs.readFileSync(temFile))
-            // console.log()
-        })
-        // let readStream = fs.createReadStream(temFile);
-        // let writeStream = fs.createWriteStream(targetFile);
-        // readStream.pipe(writeStream);
-        // fs.writeFileSync(targetFile, fs.readFileSync(temFile));/
+    }]).then((folder) => {
+        mkdirs(folder.name, targetFolderRoots[answers.type]);
+        // 创建新文件夹，如果失败说明文件已经存在
+        copyRealFile(folder.name,targetFolderRoots[answers.type], temFolders[answers.type]);
     })
 })
+
+
+/**
+ * 创建文件夹
+ * @param {String} folder 终端输入的路径
+ * @param {String} targetFolderRoot 输出的目标文件夹
+ */
+function mkdirs(folder, targetFolderRoot) {
+    const folderName = folder.split('/')
+    folderName.push('');
+    folderName.reduce((total, folderItem) => {
+        const hasFolder = fs.existsSync(`${targetFolderRoot + total}`)
+        !hasFolder && fs.mkdirSync(`${targetFolderRoot + total}`)
+        if (!folderItem && hasFolder) console.error(chalk.red(`== sorry, folder ${folder} is exist or your input is error! ==`))
+        return total + "/" + folderItem
+    })
+}
+
+/**
+ * 克隆实际的底层文件列表
+ * @param {String} folder 终端输入的路径
+ * @param {String} targetFolderRoot 目标文件目录
+ * @param {String} temFolder 对应模版的目录
+ */
+function copyRealFile(folder, targetFolderRoot, temFolder) {
+    let fileName = folder.split('/').pop()
+    let targetFolder = `${targetFolderRoot + folder}/${fileName}`;
+    fs.readdirSync(temFolder).forEach((val, index) => {
+        const extname = path.extname(val);
+        let temRealFile = path.join(temFolder, `${val}`);
+        let targetFile = targetFolder + extname;
+        fs.writeFileSync(targetFile, fs.readFileSync(temRealFile));
+    })
+}
+
+
 
 
 
