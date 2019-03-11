@@ -1,0 +1,8 @@
+<!--component/formButton/formButton.wxml-->
+<form bindsubmit="_clickFromButton" report-submit="true" data-mark="{{fromButtonMark}}">
+  <button class='fromButton' style="{{fromButtonStyle}}" >
+    <!-- {{fromButtonText}} -->
+    <slot></slot>
+  </button>
+</form> 
+

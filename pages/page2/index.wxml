@@ -1,4 +1,9 @@
 <view>这是页面2的东西new</view>
 <button bindtap='btnClick'>点击上传二维码</button>
-<view >{{dataUrl}}</view> 
+<view>{{dataUrl}}</view>
 <time class="time" startTime="10" callback="{{timerCallback}}"></time>
+
+<!-- 按钮的设置 -->
+<formButton fromButtonText="这是一个文案">
+  <view class='slot-button'>666</view>
+</formButton>

@@ -12,7 +12,8 @@
     "pages/scrollPage/scrollPage",
     "pages/lazyload/lazyload",
     "pages/rpx探索/rpx",
-    "cli/page/page"
+    "cli/page/page",
+    "pages/formButtonShow/formButtonShow"
   ],
   "window": {
     "backgroundTextStyle": "light",

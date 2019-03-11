@@ -30,7 +30,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 9,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -89,7 +89,14 @@
 				{
 					"id": -1,
 					"name": "rpx",
-					"pathName": "pages/rpx探索/rpx"
+					"pathName": "pages/rpx探索/rpx",
+					"query": ""
+				},
+				{
+					"id": 10,
+					"name": "formButton组件探索",
+					"pathName": "pages/formButton/formButton",
+					"query": ""
 				}
 			]
 		}

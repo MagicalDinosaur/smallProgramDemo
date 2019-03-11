@@ -6,3 +6,11 @@ Page {
   display: block;
   /* margin: 20rpx; */
 }
+
+.slot-button{
+  color:#fff;
+  width: 500rpx;
+  height: 50rpx;
+  background: #abc000;
+  margin: 0 auto;
+}

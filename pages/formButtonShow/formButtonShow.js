@@ -1,4 +1,4 @@
-// cli/page/page.js
+// pages/formButtonShow/formButtonShow.js
 Page({
 
   /**
