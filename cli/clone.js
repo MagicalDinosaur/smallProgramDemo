@@ -14,6 +14,8 @@ let targetFolderRoots = {
     "component": "component/"
 }
 
+// addPageInfoToApp()
+
 // 首先选择一个类目
 inquirer.prompt([{
     type: 'list',
@@ -28,9 +30,15 @@ inquirer.prompt([{
         name: 'name',
         message: 'Input new page name:'
     }]).then((folder) => {
+        console.log(folder)
+        if(!folder.length){
+            console.error('文件名不能为空');
+            return;
+        }
         mkdirs(folder.name, targetFolderRoots[answers.type]);
         // 创建新文件夹，如果失败说明文件已经存在
-        copyRealFile(folder.name,targetFolderRoots[answers.type], temFolders[answers.type]);
+        copyRealFile(folder.name, answers.type);
+
     })
 })
 
@@ -57,14 +65,45 @@ function mkdirs(folder, targetFolderRoot) {
  * @param {String} targetFolderRoot 目标文件目录
  * @param {String} temFolder 对应模版的目录
  */
-function copyRealFile(folder, targetFolderRoot, temFolder) {
+function copyRealFile(folder,type ) {
+    let targetFolderRoot =  targetFolderRoots[type];
+    let temFolder = temFolders[type];
     let fileName = folder.split('/').pop()
     let targetFolder = `${targetFolderRoot + folder}/${fileName}`;
     fs.readdirSync(temFolder).forEach((val, index) => {
         const extname = path.extname(val);
         let temRealFile = path.join(temFolder, `${val}`);
         let targetFile = targetFolder + extname;
-        fs.writeFileSync(targetFile, fs.readFileSync(temRealFile));
+        console.log(targetFolder);
+        fs.writeFileSync(targetFile, fs.readFileSync(temRealFile), (err) => {
+            if (err) throw err;
+            console.log('文件已保存');
+        });
+
+    })
+    type == 'page' && addPageInfoToApp(targetFolder)
+}
+
+/**
+ * 修改app.json配置文件
+ */
+
+function addPageInfoToApp(fileName) {
+    fs.readFile('./app.json', function (err, data) {
+        if (err) {
+            return console.error(err)
+        }
+        var person = data.toString();//将二进制的数据转换为字符串
+        person = JSON.parse(person);//将字符串转换为json对象
+        person.pages.push(fileName);
+        const outputData = JSON.stringify(person,null,"\t")
+        fs.writeFile('./app.json',outputData,function(err){
+            if(err){
+                console.error(err);
+            }
+            console.log('文件建好啦！');
+        })
+        console.log(person.pages);
     })
 }
 
