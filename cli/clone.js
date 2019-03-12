@@ -31,7 +31,7 @@ inquirer.prompt([{
         message: 'Input new page name:'
     }]).then((folder) => {
         console.log(folder)
-        if(!folder.length){
+        if(!folder.name.length){
             console.error('文件名不能为空');
             return;
         }

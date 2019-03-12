@@ -1,2 +1,5 @@
-<!--pages/formButtonShow/formButtonShow.wxml-->
-<text>pages/formButtonShow/formButtonShow.wxml</text>
+<!-- 按钮的设置 -->
+<formButton fromButtonText="这是一个文案">
+  <view class='slot-button' >新的文案</view>
+</formButton>
+

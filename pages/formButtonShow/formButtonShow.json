@@ -1,8 +1,8 @@
 {
-  "usingComponents": {
-    "father": "../../component/father/father",
-    "child": "../../component/child/child",
-    "time": "../../component/time/time",
-    "formButton": "../../component/formButton/formButton"
+    "usingComponents": {
+      "father": "../../component/father/father",
+      "child": "../../component/child/child",
+      "time": "../../component/time/time",
+      "formButton":"../../component/formButton/formButton"
+    }
   }
-}

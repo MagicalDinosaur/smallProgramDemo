@@ -1,8 +1,10 @@
 <!--component/formButton/formButton.wxml-->
-<form bindsubmit="_clickFromButton" report-submit="true" data-mark="{{fromButtonMark}}">
-  <button class='fromButton' style="{{fromButtonStyle}}" >
-    <!-- {{fromButtonText}} -->
-    <slot></slot>
-  </button>
-</form> 
-
+<view class='formButton-box'>
+  <form bindsubmit="_clickFromButton" report-submit="true" data-mark="{{fromButtonMark}}">
+    <button class='fromButton' style="{{fromButtonStyle}}">
+      <!-- <view > 2134</view> -->
+      <slot></slot>
+      <!-- 1234 -->
+    </button>
+  </form>
+</view>
