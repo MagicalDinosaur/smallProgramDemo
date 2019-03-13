@@ -62,9 +62,9 @@ function mkdirs(folder, targetFolderRoot) {
 /**
  * 克隆实际的底层文件列表
  * @param {String} folder 终端输入的路径
- * @param {String} targetFolderRoot 目标文件目录
- * @param {String} temFolder 对应模版的目录
+ * @param {String} type 用户选择的类型
  */
+
 function copyRealFile(folder,type ) {
     let targetFolderRoot =  targetFolderRoots[type];
     let temFolder = temFolders[type];
@@ -81,6 +81,7 @@ function copyRealFile(folder,type ) {
         });
 
     })
+    // 如果类型是page需要在app.json注册一下
     type == 'page' && addPageInfoToApp(targetFolder)
 }
 
