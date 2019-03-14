@@ -87,6 +87,7 @@ function copyRealFile(folder,type ) {
 
 /**
  * 修改app.json配置文件
+ * @param {String} fileName 需要新增的page路径
  */
 
 function addPageInfoToApp(fileName) {
