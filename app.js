@@ -5,6 +5,7 @@ var fundebug = require('./libs/fundebug.js');
 fundebug.apikey = 'ce54077ad1be26dc34dcf06d5c0e24fd68eb9f186894e325d11558be8df1a43d';
 
 App({
+  // 生命周期回调——监听小程序初始化
   onLaunch: function () {
 
     // 展示本地存储能力
@@ -41,6 +42,10 @@ App({
       }
     })
   },
+
+  // 其他的生命周期函数
+  // onSHow onHide onError onPageNotFound
+
   globalData: {
     userInfo: null
   }
