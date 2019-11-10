@@ -3,14 +3,14 @@ Page({
   data: {
     dataUrl: ""
   },
-  onShow: function () {
+  onShow: function() {
     // NET.$get(
     //   'https://www.zcool.com.cn/content/other.json',
     //   "",
     //   { objectType: 3, objectId: 6772131 }
     // )
   },
-  btnClick: function () {
+  btnClick: function() {
     // 允许从相机和相册扫码
     wx.scanCode({
       success: (res) => {
@@ -18,6 +18,11 @@ Page({
           dataUrl: res.result
         })
       }
+    })
+  },
+  buttonJump() {
+    wx.navigateTo({
+      url: '/pages/page2/index',
     })
   }
 })

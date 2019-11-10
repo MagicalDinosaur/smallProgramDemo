@@ -7,3 +7,5 @@
 <formButton fromButtonText="这是一个文案">
   <view class='slot-button'>666</view>
 </formButton>
+
+<button bindtap='buttonJump'>点击跳转</button>

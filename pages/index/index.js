@@ -73,8 +73,6 @@ Page({
         }
       })
     }
-
-    console.log(getCurrentPages()[0])
   },
   onReady: function () {
   },
